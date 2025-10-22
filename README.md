@@ -4,14 +4,11 @@ A lightweight, accessible dual-handle range slider component built with vanilla 
 
 ## Installation
 
-### GitHub Download
-1. Go to the [GitHub repository](https://github.com/marc-marcet/dual-handle-range-slider)
-2. Download the latest release or clone the repository
-3. Copy these files to your project:
+1. Copy these files to your project:
    - `range-slider.js`
    - `range-slider.css`
 
-### Include in your HTML
+2. Include in your HTML
 ```html
 <link rel="stylesheet" href="range-slider.css">
 <script src="range-slider.js"></script>
