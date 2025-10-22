@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Slider</title>
+    <link rel="stylesheet" href="range-slider.css">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; padding: 20px; }
+        .container { margin: 30px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .output { margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 4px; }
+        code { background: #e9ecef; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <h1>Range Slider</h1>
+
+    <div class="container">
+        <h3>Example 1: Basic Range</h3>
+        <div data-range-slider 
+             data-min="0" 
+             data-max="100" 
+             data-min-value="25" 
+             data-max-value="75">
+        </div>
+        <div class="output">
+            <strong>HTML:</strong><br>
+            <code>&lt;div data-range-slider data-min="0" data-max="100" data-min-value="25" data-max-value="75"&gt;&lt;/div&gt;</code>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Example 2: Price Range with Callback</h3>
+        <div data-range-slider 
+             data-min="0" 
+             data-max="1000" 
+             data-step="10"
+             data-min-value="100" 
+             data-max-value="500" 
+             data-label-prefix="$"
+             data-on-change="handlePriceChange">
+        </div>
+        <div class="output">
+            <p id="price-output">Current range: $100 - $500</p>
+            <strong>HTML:</strong><br>
+            <code>&lt;div data-range-slider data-min="0" data-max="1000" data-label-prefix="$" data-on-change="handlePriceChange"&gt;&lt;/div&gt;</code>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Example 3: Year Range</h3>
+        <div data-range-slider 
+             data-min="1990" 
+             data-max="2025" 
+             data-step="5"
+             data-min-value="2000" 
+             data-max-value="2020">
+        </div>
+        <div class="output">
+            <strong>HTML:</strong><br>
+            <code>&lt;div data-range-slider data-min="1990" data-max="2025" data-step="5"&gt;&lt;/div&gt;</code>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Example 4: Weight Range with Suffix</h3>
+        <div data-range-slider 
+             data-min="0" 
+             data-max="100" 
+             data-step="5"
+             data-min-value="20" 
+             data-max-value="80"
+             data-label-suffix="kg">
+        </div>
+        <div class="output">
+            <strong>HTML:</strong><br>
+            <code>&lt;div data-range-slider data-min="0" data-max="100" data-label-suffix="kg"&gt;&lt;/div&gt;</code>
+        </div>
+    </div>
+
+    <!-- Include the range slider component -->
+    <script src="range-slider.js"></script>
+    
+    <script>
+        // Optional: Handle price changes
+        function handlePriceChange(values, element) {
+            document.getElementById('price-output').textContent = 
+                `Current range: $${values.min} - $${values.max}`;
+        }
+    </script>
+
+</body>
+</html>

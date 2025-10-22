@@ -1,0 +1,89 @@
+/**
+ * Dual-Handle Range Slider Styles
+ * Standalone CSS for the range slider component
+ * 
+ * @version 1.0.0
+ * @license MIT
+ */
+
+/* Range Slider Styles */
+.range-slider-container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    user-select: none; /* Prevent text selection during drag */
+}
+
+.range-slider-track,
+.range-slider-fill {
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    left: 0;
+}
+
+.range-slider-track {
+    background-color: #e4e6eb;
+}
+
+.range-slider-fill {
+    background-color: #1877f2;
+}
+
+.range-slider-handle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #1877f2;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    transform: translateX(-50%); /* Center handle over the value */
+    z-index: 2;
+    outline: none; /* Remove default outline, we'll add a custom focus style */
+}
+
+.range-slider-handle:focus-visible {
+    box-shadow: 0 0 0 4px rgba(24, 119, 242, 0.3);
+}
+
+.range-slider-handle:active {
+    cursor: grabbing;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.range-slider-labels {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #606770;
+    z-index: 1;
+}
+
+.range-slider-label-min,
+.range-slider-label-max {
+    position: absolute;
+    top: 15px;
+    font-size: 0.9rem;
+    color: #1c1e21;
+    font-weight: 500;
+    background-color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* Hidden inputs for form submission */
+.range-slider-inputs {
+    display: none;
+}
